@@ -1,0 +1,174 @@
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: sans-serif;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+:root {
+  --gap: .5em;
+  --index: calc(1vw + 1vh);
+  --color-dark: #000;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: calc(var(--index) * 2.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 400;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.title span {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  font-size: calc(var(--index) * 0.75);
+  margin-top: 5px;
+}
+
+.gallery {
+  width: 30vw;
+  -webkit-column-width: 2em;
+     -moz-column-width: 2em;
+          column-width: 2em;
+  gap: var(--gap);
+  -webkit-transform: scale(8.2);
+      -ms-transform: scale(8.2);
+          transform: scale(8.2);
+  will-change: transform;
+  -webkit-transition: opacity 1s cubic-bezier(0.075, 1, 0.25, 1), -webkit-transform;
+  transition: opacity 1s cubic-bezier(0.075, 1, 0.25, 1), -webkit-transform;
+  -o-transition: transform, opacity 1s cubic-bezier(0.075, 1, 0.25, 1);
+  transition: transform, opacity 1s cubic-bezier(0.075, 1, 0.25, 1);
+  transition: transform, opacity 1s cubic-bezier(0.075, 1, 0.25, 1), -webkit-transform;
+}
+
+.gallery__item {
+  margin-bottom: var(--gap);
+  -webkit-transform: scale(1.001);
+      -ms-transform: scale(1.001);
+          transform: scale(1.001);
+  will-change: transform;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.gallery__item:hover {
+  -webkit-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.gallery__item img {
+  width: 100%;
+  display: block;
+}
+
+.loaded .title span {
+  opacity: 0;
+}
+
+.loaded .gallery {
+  opacity: 1;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-dark);
+  }
+
+  .title {
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
+  }
+}
